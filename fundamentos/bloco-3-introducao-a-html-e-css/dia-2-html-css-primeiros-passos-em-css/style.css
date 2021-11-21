@@ -1,0 +1,36 @@
+body {
+    font-size: 16px;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+    text-decoration: overline;
+    font-style: italic;
+
+}
+
+#list_unordened_yellow {
+    background-color: yellow;
+}
+
+#list_unordened_red {
+    background-color: red;
+}
+
+#list_unordened_brown {
+    background-color: brown;
+}
+
+.list_background_index {
+    background-color: peru;
+    text-align: left;
+    line-height: 40px;
+
+}
