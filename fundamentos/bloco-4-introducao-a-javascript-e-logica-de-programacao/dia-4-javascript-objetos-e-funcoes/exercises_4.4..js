@@ -27,15 +27,14 @@ for (const key in info) {
 let result="";
 
 for (const key in info) {
-  if (key === "recorrente") {
-    if (info[key] === "Sim" && infoTioPatinhas[key] === "Sim") {
-      //console.log("Ambos recorrentes");
+  let valor= "Sim"
+
+    if (key === "recorrente" && info[key] === valor && infoTioPatinhas[key] === valor) {
+    console.log("Ambos recorrentes");
     } else {
-      //console.log(info[key] + " e " + infoTioPatinhas[key]);
+      console.log(info[key] + " e " + infoTioPatinhas[key]);
     }
-  } else {
-    //console.log(info[key] + " e " + infoTioPatinhas[key]);
-  }
+  
 }
 
 // EXERCICIO 6
@@ -71,4 +70,4 @@ leitor.livrosFavoritos.push(newReader)
 //  leitor.sobrenome + " se chama: " + leitor.livrosFavoritos[1]["titulo"]);
 
 
- console.log(leitor.nome + " " +"tem" + " " + leitor.livrosFavoritos.length + " " + "livros favoritos")
+ //console.log(leitor.nome + " " +"tem" + " " + leitor.livrosFavoritos.length + " " + "livros favoritos")
