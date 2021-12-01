@@ -24,6 +24,8 @@ for (const key in info) {
 
 //console.table(infoTioPatinhas)
 
+let result="";
+
 for (const key in info) {
   if (key === "recorrente") {
     if (info[key] === "Sim" && infoTioPatinhas[key] === "Sim") {
@@ -51,5 +53,22 @@ let leitor = {
   ],
 };
 
-console.log("O livro favorito de " + leitor.nome + " " +
- leitor.sobrenome + " se chama: " + leitor.livrosFavoritos[0]["titulo"]);
+// console.log("O livro favorito de " + leitor.nome + " " +
+//  leitor.sobrenome + " se chama: " + leitor.livrosFavoritos[0]["titulo"]);
+
+
+//  EXERCISE 7
+
+let newReader={
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editor: 'Rocco',
+}
+
+leitor.livrosFavoritos.push(newReader)
+
+// console.log("O livro favorito de " + leitor.nome + " " +
+//  leitor.sobrenome + " se chama: " + leitor.livrosFavoritos[1]["titulo"]);
+
+
+ console.log(leitor.nome + " " +"tem" + " " + leitor.livrosFavoritos.length + " " + "livros favoritos")
