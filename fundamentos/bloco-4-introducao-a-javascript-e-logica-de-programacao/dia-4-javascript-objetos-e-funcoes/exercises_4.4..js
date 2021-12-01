@@ -11,5 +11,6 @@ info["recorrente"]= "Sim";
 //console.table(info);
 
 for (const key in info) {
-console.log(key);
+//console.log(key);
+console.log(info[key]);
 }
