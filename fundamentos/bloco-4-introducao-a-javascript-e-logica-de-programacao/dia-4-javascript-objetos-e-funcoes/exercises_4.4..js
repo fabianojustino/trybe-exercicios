@@ -6,6 +6,10 @@ let info={
 
 //console.log( "Bem vinda, "+ info.personagem)
 
-info["recorrent"]= "Sim";
+info["recorrente"]= "Sim";
 
-console.table(info);
+//console.table(info);
+
+for (const key in info) {
+console.log(key);
+}
