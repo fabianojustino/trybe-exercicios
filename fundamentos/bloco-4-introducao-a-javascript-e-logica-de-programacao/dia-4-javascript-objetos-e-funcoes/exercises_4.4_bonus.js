@@ -40,5 +40,22 @@ function menor(numeros) {
 return indice;
 }
 
-let result = menor([2, 4, 6, 7, 10, 0, -3]);
- console.log(result);
+// let result = menor([2, 4, 6, 7, 10, 0, -3]);
+//  console.log(result);
+
+
+//exercise 4
+function maxCaracter(nome) {
+   let maior=nome[0].length;
+   let chave= 0;
+
+  for (let key in nome) {  
+    if(nome[key].length > maior){
+      maior= nome[key].length;  
+      chave= key;    
+    } 
+}
+return nome[chave];
+}
+
+console.log( maxCaracter(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
