@@ -76,7 +76,7 @@ for (let lineIndex =0; lineIndex < midOfMatrix; lineIndex += 1) {
 
 
 
-let numeric = 7;
+let numeric = 5;
 let middle = (numeric + 1) / 2;
 let left = middle;
 let right = middle;
@@ -92,7 +92,7 @@ for (let line = 1; line <= middle; line += 1) {
   }
   left -= 1;
   right += 1;
-  //console.log(outputLine);
+  console.log(outputLine);
 }
 
 
@@ -110,8 +110,8 @@ for (let index = 2; index <= number ; index+=1){
 }
 
 if(cont==2){
-  console.log("o número:", number , "é primo");
+  //console.log("o número:", number , "é primo");
 }else{
-  console.log("o número:", number , "não é primo");
+  //console.log("o número:", number , "não é primo");
 }
 
