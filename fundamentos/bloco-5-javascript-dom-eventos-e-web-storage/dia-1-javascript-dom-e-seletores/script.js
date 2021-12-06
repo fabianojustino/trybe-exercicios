@@ -1,5 +1,5 @@
 function setP(description){
-let p =document.getElementsByTagName("p");
+let p = document.getElementsByTagName("p");
 p[1].innerText =description;
 }
 let text= "Eu me vejo como um programador experiente," +
@@ -29,13 +29,21 @@ function changeText(tag, texto){
 changeText("h1", "Exercício 5.1 - Java Script")
 
 function upperCase(){
-  let paragrafos = document.getElementsByTagName("p");
+  let paragrafos = document.getElementsByTagName('p');
 
-  for (const key in paragrafos) {
-   let textoUpper = paragrafos[key].innerText;
-    paragrafos[key].innerText= textoUpper.toUpperCase();
-  }
+ for (let index = 0; index < paragrafos.length; index++) {
+   paragrafos[index].innerText = paragrafos[index].innerText.toUpperCase();
+   
+ }
 }
 upperCase();
 
+function printParagrafos(){
+  let p= document.getElementsByTagName("p");
+ 
+  for (let index = 0; index < p.length; index++) {
+  console.log(p[index].innerText);    
+  }  
+ }
 
+ printParagrafos();
