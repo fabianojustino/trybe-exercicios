@@ -22,4 +22,20 @@ function setBackroundColorCenter(color){
 setBackroundColorCenter("white");
 
 
-l
+function changeText(tag, texto){
+  document.getElementsByTagName(tag)[0].innerText = texto;  
+}
+
+changeText("h1", "Exercício 5.1 - Java Script")
+
+function upperCase(){
+  let paragrafos = document.getElementsByTagName("p");
+
+  for (const key in paragrafos) {
+   let textoUpper = paragrafos[key].innerText;
+    paragrafos[key].innerText= textoUpper.toUpperCase();
+  }
+}
+upperCase();
+
+
