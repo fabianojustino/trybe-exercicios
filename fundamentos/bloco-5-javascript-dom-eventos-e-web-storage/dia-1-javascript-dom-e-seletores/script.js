@@ -6,12 +6,12 @@ let text= "Eu me vejo como um programador experiente," +
 "participando de diversos projetos";
 setP(text);
 
-function setBackroundColorDv(color){
+function setBackgroundColorDv(color){
   let divisoria =document.getElementsByClassName("main-content");
   divisoria[0].style.backgroundColor = color;
   
 }
-setBackroundColorDv("rgb(76,164,109");
+setBackgroundColorDv("rgb(76,164,109");
 
 
 function setBackroundColorCenter(color){
@@ -47,3 +47,36 @@ function printParagrafos(){
  }
 
  printParagrafos();
+
+/*
+ let arrayAnimals = ["cavalo", "galinha", "gato"];
+
+ let listAnimals = document.querySelector(".list-animals")   
+
+ for (let index = 0; index < arrayAnimals.length; index++) {
+  let li = document.createElement("li");
+  let animal = arrayAnimals[index];
+  li.innerText = animal;
+  li.className="item-animal";
+
+  listAnimals.appendChild(li)
+   
+ }
+
+ //Apos preencher e definir uma classe para os novos itens, percorro para excluir um item
+ let contentAnimals = document.querySelectorAll(".item-animal");
+
+ for (let index = 0; index < contentAnimals.length; index++) {
+ 
+  let texto = contentAnimals[index];
+
+  if(texto.innerText.includes("gato")){
+    //listAnimals.removeChild(texto)
+  }
+
+   
+ }
+
+ let dados = document.getElementById("text").lastElementChild.remove();
+*/
+

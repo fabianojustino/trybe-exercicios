@@ -1,6 +1,31 @@
 main, section {
-  border-color: black;
+   border-color: rgb(119, 35, 35); 
   border-style: solid;
+}
+
+.border{
+  border: 2px solid black;
+}
+
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
+
+.square{
+  border-radius: 1px;
+}
+
+
+.circle{
+  border-radius: 20px;  
+}
+
+.big{
+  width: 200px;
+  height:200px;
 }
 
 .title {
