@@ -57,14 +57,33 @@
   </head>
   <body>
     <script>
+      function addChild(element, tag) {
+        element.appendChild(document.createElement(tag));
+      }
+
+       function addClass(element, classe){
+        element.className = classe;
+       }
+
+      //seleciona a tag body 
+      let body = document.querySelector("body");
+
+      //adiciona h1 e main como filhos de body
+      addChild(body, "h1");
+      addChild(body, "main");
+
+      //seleciona o main e adiciona uma classe
+      let main = document.querySelector("main");
+      addClass(main,"main-content")
+ 
+      //adiciona uma section a main
+      addChild(main, 'section')
       
-   let body = document.querySelector('body');
-    
-   body.appendChild(document.createElement('h1')) 
-   body.appendChild(document.createElement('main'))
-   
+      //seleciona a section
+      let section = document.querySelector("section");
+      addClass(section,"center-content")
 
-
+      main.appendChild;
     </script>
   </body>
 </html>
