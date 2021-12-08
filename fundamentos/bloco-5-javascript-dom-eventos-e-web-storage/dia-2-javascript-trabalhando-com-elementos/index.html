@@ -124,15 +124,17 @@
 
       addChildIn(thirdSessionMain, "ul");
 
-      let listaNumbers = document.querySelector(".center-content ul");
+      let listaNumbers = document.querySelector(".right-content").firstElementChild.nextElementSibling;
+      addClassIn(listaNumbers, "ul-list")
 
       for (let index = 0; index < listaNumberInFull.length; index += 1) {
         let content = listaNumberInFull[index];
 
         let li = document.createElement("li");
         li.innerText = content;
+        addClassIn(li, 'list-item')
 
-        thirdSessionMain.appendChild(li);
+        listaNumbers.appendChild(li);
       }
 
      for (let index = 0; index < 3; index++) {
@@ -156,7 +158,20 @@
     paiSectionLeftContent.removeChild(sectionLeftContent)
     
 
-    
+    let listUl= document.querySelector(".ul-list");
+    let listItem = document.querySelectorAll(".list-item");
+
+
+    for (let index = 0; index < listaNumberInFull.length; index++) {
+     let item = listItem[index];
+
+      if(item.innerText.includes("nove") || item.innerText.includes("dez")){
+        listUl.removeChild(item);
+      }
+    }
+  
+
+
 
     </script>
 
