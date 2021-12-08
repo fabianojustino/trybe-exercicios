@@ -58,10 +58,11 @@
   <body>
     <script>
       function addChildIn(element, tag) {
-        element.appendChild(document.createElement(tag));
+       element.appendChild(document.createElement(tag));
       }
       function addClassIn(element, classe){
         element.className = classe;
+    
        }
       function addTextIn(element, text){
         if(text!= null){
@@ -92,6 +93,17 @@
       addClassIn(section,"center-content")
       addChildIn(section,'p');
       addTextIn(".center-content p", "Tudo sobre o Dom")
+
+      addChildIn(main, 'section')
+
+      let secondSessionMain = main.firstElementChild.nextElementSibling;
+      addClassIn(secondSessionMain, 'left-content')
+    
+
+      console.log(secondSessionMain)
+     
+
+
       
     
     </script>
