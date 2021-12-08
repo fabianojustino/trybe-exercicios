@@ -58,10 +58,11 @@
   <body>
     <script>
       function addChildIn(element, tag) {
-        element.appendChild(document.createElement(tag));
+       element.appendChild(document.createElement(tag));
       }
       function addClassIn(element, classe){
         element.className = classe;
+    
        }
       function addTextIn(element, text){
         if(text!= null){
@@ -92,6 +93,25 @@
       addClassIn(section,"center-content")
       addChildIn(section,'p');
       addTextIn(".center-content p", "Tudo sobre o Dom")
+
+      addChildIn(main, 'section')
+      let secondSessionMain = main.lastElementChild;
+      addClassIn(secondSessionMain, 'left-content')   
+      
+      addChildIn(main, 'section')
+      let thirdSessionMain = main.lastElementChild;
+      addClassIn(thirdSessionMain, 'right-content') 
+
+      
+      addChildIn(thirdSessionMain,'img')
+
+      let imgThirdSession = thirdSessionMain.firstElementChild
+      imgThirdSession.src ="https://picsum.photos/200"
+         
+      console.log(imgThirdSession)
+     
+
+
       
     
     </script>
