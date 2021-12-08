@@ -58,65 +58,84 @@
   <body>
     <script>
       function addChildIn(element, tag) {
-       element.appendChild(document.createElement(tag));
+        element.appendChild(document.createElement(tag));
       }
-      function addClassIn(element, classe){
+      function addClassIn(element, classe) {
         element.className = classe;
-    
-       }
-      function addTextIn(element, text){
-        if(text!= null){
-          let tag= document.querySelector(element);
+      }
+      function addTextIn(element, text) {
+        if (text != null) {
+          let tag = document.querySelector(element);
           tag.innerText = text;
-
         }
       }
-       
 
-      //seleciona a tag body 
+      //seleciona a tag body
       let body = document.querySelector("body");
 
       //adiciona h1 com texto e main como filhos de body
       addChildIn(body, "h1");
-      addTextIn("h1", " Exercício 5.2 - JavaScript DOM")
+      addTextIn("h1", " Exercício 5.2 - JavaScript DOM");
       addChildIn(body, "main");
 
       //seleciona o main e adiciona uma classe
       let main = document.querySelector("main");
-      addClassIn(main,"main-content")
- 
+      addClassIn(main, "main-content");
+
       //adiciona uma section a main
-      addChildIn(main, 'section')
-      
+      addChildIn(main, "section");
+
       //seleciona a section
       let section = document.querySelector("section");
-      addClassIn(section,"center-content")
-      addChildIn(section,'p');
-      addTextIn(".center-content p", "Tudo sobre o Dom")
+      addClassIn(section, "center-content");
+      addChildIn(section, "p");
+      addTextIn(".center-content p", "Tudo sobre o Dom");
 
-      addChildIn(main, 'section')
+      addChildIn(main, "section");
       let secondSessionMain = main.lastElementChild;
-      addClassIn(secondSessionMain, 'left-content')   
-      
-      addChildIn(main, 'section')
+      addClassIn(secondSessionMain, "left-content");
+
+      //6
+      addChildIn(main, "section");
       let thirdSessionMain = main.lastElementChild;
-      addClassIn(thirdSessionMain, 'right-content') 
+      addClassIn(thirdSessionMain, "right-content");
 
-      
-      addChildIn(thirdSessionMain,'img')
+      addChildIn(thirdSessionMain, "img");
 
-      let imgThirdSession = thirdSessionMain.firstElementChild
-      imgThirdSession.src ="https://picsum.photos/200"
-         
-      console.log(imgThirdSession)
-     
+      let imgThirdSession = thirdSessionMain.firstElementChild;
+      imgThirdSession.src = "https://picsum.photos/200";
 
-
-      
     
+      let listaNumberInFull = [
+        "um",
+        "dois",
+        "três",
+        "quatro",
+        "cinco",
+        "seis",
+        "sete",
+        "oito",
+        "nove",
+        "dez",
+      ];
+
+      addChildIn(thirdSessionMain, "ul");
+
+      let listaNumbers = document.querySelector(".center-content ul");
+
+      for (let index = 0; index < listaNumberInFull.length; index += 1) {
+        let content = listaNumberInFull[index];
+
+        let li = document.createElement("li");
+        li.innerText = content;
+
+        thirdSessionMain.appendChild(li);
+      }
+
+     
     </script>
 
-<!-- Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+    <!-- Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
 Adicione a tag main com a classe main-content como filho da tag body ;
 Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
 
@@ -126,6 +145,5 @@ Adicione a tag section com a classe right-content como filho da tag main criada 
 Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
 Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2. -->
-
   </body>
 </html>
