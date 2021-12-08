@@ -132,13 +132,28 @@
         thirdSessionMain.appendChild(li);
       }
 
-     for (let index = 0; index < 2; index++) {
-        addChildIn(main, 'h3')       
+     for (let index = 0; index < 3; index++) {
+        addChildIn(main, 'h3')  
+                
      }
 
      let elementH1 = document.querySelector('h1');
      addClassIn(elementH1,'title')
+
+     let elementH3 = document.querySelectorAll('h3')
       
+     for (let index = 0; index < 3; index++) {
+        addClassIn(elementH3[index], 'description')  
+                
+     }
+
+
+    let sectionLeftContent = document.querySelector('.left-content');
+    let paiSectionLeftContent = sectionLeftContent.parentNode;
+    paiSectionLeftContent.removeChild(sectionLeftContent)
+    
+
+    
 
     </script>
 
