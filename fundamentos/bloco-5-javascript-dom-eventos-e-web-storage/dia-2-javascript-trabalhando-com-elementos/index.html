@@ -95,10 +95,12 @@
       addTextIn(".center-content p", "Tudo sobre o Dom")
 
       addChildIn(main, 'section')
-
-      let secondSessionMain = main.firstElementChild.nextElementSibling;
-      addClassIn(secondSessionMain, 'left-content')
-    
+      let secondSessionMain = main.lastElementChild;
+      addClassIn(secondSessionMain, 'left-content')   
+      
+      addChildIn(main, 'section')
+      let thirdSessionMain = main.lastElementChild;
+      addClassIn(thirdSessionMain, 'right-content') 
 
       console.log(secondSessionMain)
      
