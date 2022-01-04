@@ -1,0 +1,11 @@
+* {
+margin: auto;
+}
+
+fieldset{
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  vertical-align: top;
+  margin-top: 10px;
+}
