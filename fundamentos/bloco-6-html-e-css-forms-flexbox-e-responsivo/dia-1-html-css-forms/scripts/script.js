@@ -1,4 +1,7 @@
+let today = moment().format('DD-MM-YYYY');
+
 const selected_estado = document.querySelector("#estado");
+
 const array_estados = [
   "AC, Acre",
   "AL, Alagoas",
@@ -37,7 +40,14 @@ const cpf = document.getElementById("cpf");
 const endereco = document.getElementById("endereco");
 const cidade = document.getElementById("cidade");
 
+// set data
 const inicio = document.getElementById("inicio");
+inicio.DatePickerX.init();
+
+let data = new Date();
+const dataFormatada = ((data.getDate() )) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
+inicio.DatePickerX.setValue(dataFormatada , false);
+
 
 const answers = document.querySelector("#answers");
 const wrongs = document.querySelector("#wrongs");
@@ -76,6 +86,8 @@ function removeKids(element) {
 }
 
 function writeValues(matriz, element) {
+
+
  
   for (let index = 0; index < matriz.length; index++) {
     const key = Object.keys(matriz[index]);
@@ -127,7 +139,6 @@ function checkEmptyFields() {
     wrongList.push({ 'data de inicio': inicio.value }); 
   }
 
-  console.log(estado.value); 
 
   if (correctList.length > 0) {
     removeKids(answers);
@@ -142,3 +153,13 @@ function checkEmptyFields() {
 }
 
 submit.addEventListener("click", sendForm);
+
+
+
+
+
+
+// let brasilTetra = moment('17071994','DDMMYYY');
+// let fromNow = brasilTetra.fromNow();
+
+// console.log(fromNow);
