@@ -10,10 +10,23 @@ fieldset{
   padding: 10px;
 }
 
+fieldset input[type = "text"]{
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 14px;
+
+}
+
 #answers, #wrongs{
   display: inline-block;
   border: 1px solid black;
   box-sizing: border-box;
   padding: 10px;
   vertical-align: top;
+}
+
+#curriculo{
+  max-width: 300px;
+  min-width: 200px;
+  min-height: 200px;
 }
