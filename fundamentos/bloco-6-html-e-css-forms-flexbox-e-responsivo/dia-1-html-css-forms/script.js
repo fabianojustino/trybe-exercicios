@@ -37,6 +37,8 @@ const cpf = document.getElementById("cpf");
 const endereco = document.getElementById("endereco");
 const cidade = document.getElementById("cidade");
 
+const inicio = document.getElementById("inicio");
+
 const answers = document.querySelector("#answers");
 const wrongs = document.querySelector("#wrongs");
 
@@ -65,19 +67,16 @@ function sendForm(event) {
   checkEmptyFields();
 }
 
-function removeKids() {
-  while (answers.firstElementChild) {
-    answers.removeChild(answers.firstElementChild);
+function removeKids(element) {
+  while (element.firstElementChild) {
+    element.removeChild(element.firstElementChild);
   }
 
-  while (wrongs.firstElementChild) {
-    wrongs.removeChild(wrongs.firstElementChild);
-  }
+  
 }
 
 function writeValues(matriz, element) {
-  // removeKids();
-
+ 
   for (let index = 0; index < matriz.length; index++) {
     const key = Object.keys(matriz[index]);
     const value = Object.values(matriz[index]);
@@ -86,6 +85,7 @@ function writeValues(matriz, element) {
     item.innerText = `${key} : ${value}`;
     element.appendChild(item);
   }
+  
 }
 
 // VALIDA CAMPOS VAZIOS
@@ -107,18 +107,37 @@ function checkEmptyFields() {
     correctList.push({ email: email.value });
   }
 
+  // CPF
   if (cpf.value === "") {
     wrongList.push({ cpf: cpf.value });
   } else {
     correctList.push({ cpf: cpf.value });
   }
 
+  // DATA DE INICIO
+  date = inicio.value.split('/'); 
+  let day = date[0];
+  let month = date[1];
+  let year = date[2];
+ 
+  if (day > 0 && day < 31 && month > 0 && month < 12 && year > 0) {
+    correctList.push({  'data de inicio': inicio.value});  
+  
+  } else {
+    wrongList.push({ 'data de inicio': inicio.value }); 
+  }
+
+  console.log(estado.value); 
+
   if (correctList.length > 0) {
+    removeKids(answers);
     writeValues(correctList, answers);
+    
   }
 
   if (wrongList.length > 0) {
-    writeValues(wrongList, wrongs);
+    removeKids(wrongs);
+    writeValues(wrongList, wrongs);    
   }
 }
 
