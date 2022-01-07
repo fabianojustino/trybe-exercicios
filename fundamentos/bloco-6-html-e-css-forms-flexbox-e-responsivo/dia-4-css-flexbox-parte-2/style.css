@@ -22,9 +22,10 @@ body {
 
 .menu-container {
   display: flex;
-  flex-basis: 500px;
+  /* flex-basis: 500px; */
   order: 1;
-  flex-grow: 1;
+  flex-grow: 1; 
+  align-items: center;
 }
 
 .menu-container ul {
