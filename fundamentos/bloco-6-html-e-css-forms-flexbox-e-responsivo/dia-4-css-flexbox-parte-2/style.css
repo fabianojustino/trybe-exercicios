@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   margin: 20px;
   flex-basis: 350px;
-  justify-content: center;  
+  justify-content:center;  
   align-items: center;
   flex-grow: 1;  
 }
