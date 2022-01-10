@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+}
+
+/*
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * apply a natural box layout model to all elements, but allowing components to change
+ */
+html {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #f05d5e;
+  padding: 20px;
+  color: wheat;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 24px;
+}
+
+article {
+  padding: 0px 0px;
+}
+
+article p {
+  margin-left: 15px;
+ }
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
+}
+
+h2 {
+  margin-left: 15px;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+figure {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+figcaption {
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 484px) {
+  main section {
+    background-color: #272932;
+  }
+
+  header {
+    margin: 0px !important;
+  }
+
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+
+  h2 {
+    color: #0f7173;
+  }
+
+  img {
+    width: 190px;
+  }
+
+  article p {
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+  }
+
+  figcaption {
+    color: white;
+  }
+}
