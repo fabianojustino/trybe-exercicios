@@ -59,6 +59,7 @@ img {
 }
 
 main {
+
 }
 
 section {
@@ -71,11 +72,16 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+ 
 }
 
 figcaption {
   font-size: 0.8em;
+  color: black;
 }
 
 @media screen and (min-width: 484px) {
@@ -116,7 +122,27 @@ figcaption {
     margin: 0;
   }
 
-  figcaption {
-    color: white;
-  }
+ 
+}
+
+
+
+@media screen and (min-width: 1300px) {
+
+body{
+  background-color: red;
+}
+
+h1{
+  font-size: 55px;
+}
+
+article{
+  font-size: 35px;
+}
+
+img {
+  width: 290px;
+}
+  
 }
