@@ -19,4 +19,11 @@ const order = (array) => {
   return `Os números ${array} se encontram ordenados de forma crescente!`;
 };
 
-console.log(order(oddsAndEvens)); // será necessário alterar essa linha 😉
+// console.log(order(oddsAndEvens)); // será necessário alterar essa linha 😉
+// console.log(`Os números ${oddsAndEvens.sort().reverse()} se encontram ordenados de forma crescente!`);
+
+
+var a = oddsAndEvens;
+a.sort((a, b) => (a - b) );
+
+console.log(`Os números ${a} se encontram ordenados de forma crescente!`);
