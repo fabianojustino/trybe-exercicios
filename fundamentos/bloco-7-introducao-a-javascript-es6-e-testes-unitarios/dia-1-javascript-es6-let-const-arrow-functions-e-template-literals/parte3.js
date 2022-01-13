@@ -8,4 +8,4 @@ const fatorial = (n) => {
   return valor;
 };
 
-console.log(fatorial(4));
+console.log(`O fatorial de ${4} é ${fatorial(4)}`);
