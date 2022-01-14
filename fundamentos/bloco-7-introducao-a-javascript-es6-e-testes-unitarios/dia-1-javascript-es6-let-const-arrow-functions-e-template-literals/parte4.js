@@ -10,10 +10,7 @@ function buildSkillsPhrase (paramOne) {
 
     let result = `${fun1(paramOne)}    Minhas cinco principais habilidades são:`;
 
-    array.forEach(
-        skill =>
-        result = `${result} - ${skill}`
-        );
+    array.forEach(skill => result = `${result} - ${skill}` );
 
     result = `${result} #goTrybe `;
 
