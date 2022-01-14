@@ -1,8 +1,6 @@
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-// Seu código aqui.
-
-// FUNCAO BUBBLE SORT
+// FUNCTION BUBBLE SORT
 const order = (array) => {
   let menor = "";
 
@@ -22,8 +20,7 @@ const order = (array) => {
 // console.log(order(oddsAndEvens)); // será necessário alterar essa linha 😉
 // console.log(`Os números ${oddsAndEvens.sort().reverse()} se encontram ordenados de forma crescente!`);
 
-
 var a = oddsAndEvens;
-a.sort((a, b) => (a - b) );
+a.sort((a, b) => a - b);
 
 console.log(`Os números ${a} se encontram ordenados de forma crescente!`);
