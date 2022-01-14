@@ -56,10 +56,9 @@
       const msg = 'o total do seu pedido de';   
       const foods =Object.keys(order.order.pizza);   
       const drinks = order.order.drinks.coke.type;
-
-      const chaveFood= foods[0];
-             
-      console.log( `Ola ${name}, ${msg}: ${foods[0]}, ${foods[1]} ${drinks} é R$ ${order.order.payment='50'},00.`);
+      const totalPrice = order.payment.total = '50';
+                   
+      console.log( `Ola ${name}, ${msg}: ${foods[0]}, ${foods[1]} ${drinks} é R$ ${totalPrice},00.`);
     
     }
     
