@@ -6,4 +6,13 @@ const sum = (a, b) => {
   }
 };
 
-module.exports = {sum};
+const myRemove = (array, item) => {
+  const position = array.indexOf(item);
+
+  position >= 0 ? array.splice(array.indexOf(item), 1) : "";
+
+  return array;
+};
+
+
+module.exports = { sum, myRemove };

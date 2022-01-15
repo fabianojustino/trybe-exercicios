@@ -1,17 +1,38 @@
-const { TestWatcher } = require('jest');
-const {sum} = require('./sum');
+
+const {sum, myRemove} = require('./sum');
 
 
-describe('module sum',()=> {
+describe('module sum parte 1',()=> {
 
-test('test if the sum of 4 e 5 = 9',()=>{expect(sum(4,5)).toBe(9)});
-test('test if the sum of 0 e 0 = 0',()=>{expect(sum(0,0)).toBe(0)});
-test('throw an error if the user insert a value NAN',()=>{
+test('sum of 4 e 5 = 9',()=>{expect(sum(4,5)).toBe(9)});
+test('sum of 0 e 0 = 0',()=>{expect(sum(0,0)).toBe(0)});
+test('is not a number, throw an error',()=>{
   expect(()=>{sum(4,'5')}).toThrow();
 });
 
-test('verify if the message throw error if parameters must be numbers',()=>{
+test('parameters must be numbers',()=>{
   expect(()=>{sum(4,'5')}).toThrowError('parameters must be numbers');
 });
+})
+
+
+describe('module myRemove',()=>{
+
+test('remove the number 1, expects[2,3,4] ',()=>{
+  const array = [1,2,3,4];
+  expect([2,3,4]).toEqual(myRemove(array,1));
+})
+
+
+test('remove the number 3, expects[1,2,4] ',()=>{
+  const array = [1,2,3,4];
+  expect([1,2,4]).toEqual(myRemove(array,3));
+})
+
+
+test('remove the number 5, expects[1,2,3,4] ',()=>{
+  const array = [1,2,3,4];
+  expect([1,2,3,4]).toEqual(myRemove(array,5));
+})
 
 })
