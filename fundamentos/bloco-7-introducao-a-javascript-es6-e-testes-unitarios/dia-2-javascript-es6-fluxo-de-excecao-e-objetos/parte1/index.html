@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+  <script>
+
+    const isNumberValid = (number1, number2) => {
+
+       if(isNaN(number1) || isNaN(number2)){
+        throw new Error('Digite apenas números !');
+      }
+
+      else if (number1 === '' || number2 === '') {
+        throw new Error('Digite os 2 valores acima !');
+      }
+    }
+
+    function sum() {
+      const value1 = document.getElementById('value1').value;
+      const value2 = document.getElementById('value2').value;
+      let paragraph = document.getElementById('result');
+
+      try {
+        isNumberValid(value1, value2);
+        // IMPRIME VALOR DA OPERACAO NO ELEMENT DE ID RESULT
+        const result = parseInt(value1) + parseInt(value2);
+        paragraph.innerHTML = `Resultado: ${result}`;
+
+      } catch (error) {
+        paragraph.innerText = error.message;
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
+
+    }
+
+    window.onload = () => {
+      const button = document.getElementById('button');
+      button.addEventListener('click', sum);
+    }
+
+
+    const order = {
+  name: 'Rafael Andrade',
+  phoneNumber: '11-98763-1416',
+  address: {
+    street: 'Rua das Flores',
+    number: '389',
+    apartment: '701',
+  },
+  order: {
+    pizza: {
+      marguerita: {
+        amount: 1,
+        price: 25,
+      },
+      pepperoni: {
+        amount: 1,
+        price: 20,
+      }
+    },
+    drinks: {
+      coke: {
+        type: 'Coca-Cola Zero',
+        price: 10,
+        amount: 1,
+      }
+    },
+    delivery: {
+      deliveryPerson: 'Ana Silveira',
+      price: 5,
+    }
+  },
+  payment: {
+    total: 60,
+  },
+};
+
+const customerInfo = (order) => {
+  // Adicione abaixo as informações necessárias.
+  const employee = order.delivery.deliveryPerson;
+  const name = order.name;
+  const phone = order.phoneNumber;
+  const msg = 'entrega para';
+  const address =
+    `${order.address.street}, N: ${order.address.number}, AP: ${order.address.apartment}`;
+
+  console.log( `Ola ${employee}, ${msg}: ${name}, Telefone: ${phone}, ${address}`);
+
+}
+
+customerInfo(order);
+
+const orderModifier = (order) => {
+  // Adicione abaixo as informações necessárias.
+
+}
+
+orderModifier(order);
+
+
+
+
+
+  </script>
+</body>
+
+</html>
