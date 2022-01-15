@@ -95,6 +95,7 @@ const viewHistory= (object,teacher)=>{
 const values = Object.values(object);
 let total =0;
 let degrees = [];
+let report = {};
 
 for (const key in values) {
   
@@ -105,7 +106,9 @@ for (const key in values) {
  
 }
 
-return degrees;
+report.name = teacher;
+
+return Object.assign(report,{lessons: degrees, estudantes: total});
 
 
 }
