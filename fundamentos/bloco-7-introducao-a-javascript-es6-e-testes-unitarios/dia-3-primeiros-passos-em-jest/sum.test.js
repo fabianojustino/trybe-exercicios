@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz,encode,decode } = require("./sum");
+const { sum, myRemove, myFizzBuzz,encode,decode,techList } = require("./sum");
 
 
 /* SUM */
@@ -93,6 +93,43 @@ describe("module myFizzBuzz", () => {
     const msg= 'teste de tamanho'
     expect(decode(msg).length).toBe(msg.length);
   })
-
   
  })
+
+
+
+
+/*techList highTech */
+
+
+describe('function techList', () => {
+
+  it('Testa se a função techList é definida', () => {
+    expect(techList).toBeDefined();
+  });
+
+  it('Testa se techList é uma função', () => {
+    expect(typeof techList).toBe('function');
+  });
+
+  it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+    expect(techList(['React', 'Jest', 'HTML'], 'Lucas')).toEqual([
+      {
+        tech: 'HTML',
+        name: 'Lucas'
+      },
+      {
+        tech: 'Jest',
+        name: 'Lucas'
+      },
+      {
+        tech: 'React',
+        name: 'Lucas'
+      }      
+    ]);
+  });
+
+  it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+    expect(techList([], 'Lucas')).toBe('Vazio!');
+  });
+});
