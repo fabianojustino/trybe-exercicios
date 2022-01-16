@@ -86,4 +86,25 @@ const techList = (lista, name) => {
 };
 
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode,techList };
+
+// Desafio 13
+function hydrate(frase) {
+  let intOfFrase = frase.replace(/[^0-9]/g, '').trim();
+
+  let copo = 0;
+
+  for (const iterator of frase) {
+   if(! isNaN(iterator) && iterator != ' '){
+     copo+=(parseInt(iterator));
+   }    
+  } 
+   
+  if (copo > 1) {
+    return copo + ' ' + 'copos de água';
+  } else {
+    return '1 copo de água';
+  }
+}
+console.log(hydrate('1 cerveja e 2 cervejas e 3 coca-colas'));
+
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode,techList, hydrate };

@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz,encode,decode,techList } = require("./sum");
+const { sum, myRemove, myFizzBuzz,encode,decode,techList,hydrate} = require("./sum");
 
 
 /* SUM */
@@ -70,27 +70,21 @@ describe("module myFizzBuzz", () => {
 
 
  // ENCODE E DECODE
-
  describe('function encode e decode',()=>{
 
-  test('if encode is a function', ()=>{
+  test('if encode and decode is a function', ()=>{
     expect(typeof encode).toBe('function');
+    expect(typeof decode).toBe('function'); 
   })
 
-  test('if decode is a function', ()=>{
-    expect(typeof decode).toBe('function');
-  })
-
-  test('if encode of faeiou return f12345', ()=>{
-    expect(encode('faeiou')).toBe('f12345');
-  })
-
-  test('if decode of f12345 return faeiou', ()=>{
+  it('test return of encode and decode', ()=>{  
+    expect(encode('faeiou')).toBe('f12345');  
     expect(decode('f12345')).toBe('faeiou');
   })
+  
 
   test('if the size of the message returned is the same as the message passed ', ()=>{
-    const msg= 'teste de tamanho'
+    const msg= 'teste de tamanho';
     expect(decode(msg).length).toBe(msg.length);
   })
   
@@ -132,4 +126,26 @@ describe('function techList', () => {
   it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
     expect(techList([], 'Lucas')).toBe('Vazio!');
   });
+});
+
+
+// FUNCTION HYDRATE
+
+describe('function hydrate', () => {
+  it('Testa se a função hydrate é definida', () => {
+    expect(hydrate).toBeDefined();
+  });
+
+  it('Testa se hydrate é uma função', () => {
+    expect(typeof hydrate).toBe('function');
+  });
+
+  it('Ao receber uma string retorne a sugestão de quantos copos de água deve-se beber', () => {
+    expect(hydrate('1 cerveja')).toBe('1 copo de água');
+    expect(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho')).toBe('7 copos de água');
+    expect(hydrate('2 shots de tequila, 2 cervejas e 1 corote')).toBe('5 copos de água');
+    expect(hydrate('1 copo de catuaba, 1 cervejas e 1 copo de vinho')).toBe('3 copos de água');
+    expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
+  });
+
 });
