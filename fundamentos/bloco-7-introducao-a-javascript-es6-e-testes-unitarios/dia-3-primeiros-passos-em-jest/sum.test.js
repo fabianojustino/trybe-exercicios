@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz } = require("./sum");
+const { sum, myRemove, myFizzBuzz,encode,decode } = require("./sum");
 
 
 /* SUM */
@@ -48,22 +48,51 @@ describe("module myRemove", () => {
 
 describe("module myFizzBuzz", () => {
   test("return fizzBuzz if number is divisible by  3 and 5", () => {
-    expect("fizzbuzz").toEqual(myFizzBuzz(15));
+    expect("fizzbuzz").toBe(myFizzBuzz(15));
   });
 
   test("return fizz if number is divisible by  3", () => {
-    expect("fizz").toEqual(myFizzBuzz(9));
+    expect("fizz").toBe(myFizzBuzz(9));
   });
 
   test("return buzz if number is divisible by 9", () => {
-    expect("buzz").toEqual(myFizzBuzz(25));
+    expect("buzz").toBe(myFizzBuzz(25));
   });
 
   test("return the number if not divisible by either 3 or 5", () => {
-    expect(7).toEqual(myFizzBuzz(7));
+    expect(7).toBe(myFizzBuzz(7));
   });
 
   test("return false if the parameter is not a number", () => {
-    expect(false).toEqual(myFizzBuzz("7"));
+    expect(false).toBe(myFizzBuzz("7"));
   });
 });
+
+
+ // ENCODE E DECODE
+
+ describe('function encode e decode',()=>{
+
+  test('if encode is a function', ()=>{
+    expect(typeof encode).toBe('function');
+  })
+
+  test('if decode is a function', ()=>{
+    expect(typeof decode).toBe('function');
+  })
+
+  test('if encode of faeiou return f12345', ()=>{
+    expect(encode('faeiou')).toBe('f12345');
+  })
+
+  test('if decode of f12345 return faeiou', ()=>{
+    expect(decode('f12345')).toBe('faeiou');
+  })
+
+  test('if the size of the message returned is the same as the message passed ', ()=>{
+    const msg= 'teste de tamanho'
+    expect(decode(msg).length).toBe(msg.length);
+  })
+
+  
+ })
