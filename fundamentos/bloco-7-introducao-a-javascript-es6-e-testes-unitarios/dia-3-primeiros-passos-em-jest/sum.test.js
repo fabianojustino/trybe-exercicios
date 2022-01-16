@@ -41,3 +41,29 @@ describe("module myRemove", () => {
     expect([1, 2, 3, 4]).toEqual(myRemove(array, 5));
   });
 });
+
+
+
+/* MY FIZZ BUZZ */
+
+describe("module myFizzBuzz", () => {
+  test("return fizzBuzz if number is divisible by  3 and 5", () => {
+    expect("fizzbuzz").toEqual(myFizzBuzz(15));
+  });
+
+  test("return fizz if number is divisible by  3", () => {
+    expect("fizz").toEqual(myFizzBuzz(9));
+  });
+
+  test("return buzz if number is divisible by 9", () => {
+    expect("buzz").toEqual(myFizzBuzz(25));
+  });
+
+  test("return the number if not divisible by either 3 or 5", () => {
+    expect(7).toEqual(myFizzBuzz(7));
+  });
+
+  test("return false if the parameter is not a number", () => {
+    expect(false).toEqual(myFizzBuzz("7"));
+  });
+});
