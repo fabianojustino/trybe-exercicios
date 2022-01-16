@@ -66,7 +66,6 @@ function decode(msg) {
   return msgDecodificada;
 }
 
-
 const techList = (lista, name) => {
   let listHighTech = [];
   const ordena = lista.sort();
@@ -85,26 +84,99 @@ const techList = (lista, name) => {
   }
 };
 
-
-
 // Desafio 13
 function hydrate(frase) {
-  let intOfFrase = frase.replace(/[^0-9]/g, '').trim();
+  let intOfFrase = frase.replace(/[^0-9]/g, "").trim();
 
   let copo = 0;
 
   for (const iterator of frase) {
-   if(! isNaN(iterator) && iterator != ' '){
-     copo+=(parseInt(iterator));
-   }    
-  } 
-   
+    if (!isNaN(iterator) && iterator != " ") {
+      copo += parseInt(iterator);
+    }
+  }
+
   if (copo > 1) {
-    return copo + ' ' + 'copos de água';
+    return copo + " " + "copos de água";
   } else {
-    return '1 copo de água';
+    return "1 copo de água";
   }
 }
-console.log(hydrate('1 cerveja e 2 cervejas e 3 coca-colas'));
 
-module.exports = { sum, myRemove, myFizzBuzz, encode, decode,techList, hydrate };
+// Dados
+const professionalBoard = [
+  {
+    id: "8579-6",
+    firstName: "Ana",
+    lastName: "Gates",
+    specialities: ["UX", "Design"],
+  },
+  {
+    id: "5569-4",
+    firstName: "George",
+    lastName: "Jobs",
+    specialities: ["Frontend", "Redux", "React", "CSS"],
+  },
+  {
+    id: "4456-4",
+    firstName: "Leila",
+    lastName: "Zuckerberg",
+    specialities: ["Context API", "RTL", "Bootstrap"],
+  },
+  {
+    id: "1256-4",
+    firstName: "Linda",
+    lastName: "Bezos",
+    specialities: ["Hooks", "Context API", "Tailwind CSS"],
+  },
+  {
+    id: "9852-2-2",
+    firstName: "Jeff",
+    lastName: "Cook",
+    specialities: ["Ruby", "SQL"],
+  },
+  {
+    id: "4678-2",
+    firstName: "Paul",
+    lastName: "Dodds",
+    specialities: ["Backend"],
+  },
+];
+
+// Pesquisa
+const searchEmployee = (id, detail) => {
+  let identification = "";
+  let specialities = "";
+
+  for (let key in professionalBoard) {
+    if (professionalBoard[key].id === id) {
+      identification =professionalBoard[key].id;         
+    }
+
+    if(professionalBoard[key][detail]!== undefined){     
+      specialities = professionalBoard[key][detail];
+      return specialities;
+    }
+  }
+
+
+  if(identification === ''){
+    throw new Error("Id não identificada");
+  }else if(specialities === ''){
+    throw new Error('Informação indisponível');
+  }
+
+};
+
+//console.log(searchEmployee("9852-2-2", "specialitiess"));
+
+module.exports = {
+  sum,
+  myRemove,
+  myFizzBuzz,
+  encode,
+  decode,
+  techList,
+  hydrate,
+  searchEmployee,
+};

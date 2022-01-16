@@ -1,4 +1,4 @@
-const { sum, myRemove, myFizzBuzz,encode,decode,techList,hydrate} = require("./sum");
+const { sum, myRemove, myFizzBuzz,encode,decode,techList,hydrate,searchEmployee} = require("./sum");
 
 
 /* SUM */
@@ -69,7 +69,7 @@ describe("module myFizzBuzz", () => {
 });
 
 
- // ENCODE E DECODE
+ // ENCODE E DECODEgit 
  describe('function encode e decode',()=>{
 
   test('if encode and decode is a function', ()=>{
@@ -149,3 +149,31 @@ describe('function hydrate', () => {
   });
 
 });
+
+ /* SEARCH EMPLOYEE */
+
+
+ describe('function searchEmployee',()=>{
+
+  it('its a function or exists', ()=>{
+    expect(searchEmployee).toBeDefined();
+    expect(typeof searchEmployee).toBe('function');
+  })
+
+  it('search by in and return a specialty', ()=>{
+    expect(searchEmployee('8579-6','firstName')).toBe('Ana');
+  })
+
+  it('if the id not exists throw an error', ()=>{
+    expect(()=>
+        searchEmployee('8579-4')
+    ).toThrowError(new Error('Id não identificada'))
+ })
+
+
+  it('if specialities by id not exists throw an error', ()=>{
+    expect(()=>  searchEmployee('8579-6','specialitiess')
+    ).toThrow((new Error('Informação indisponível')))
+  })
+
+ })
