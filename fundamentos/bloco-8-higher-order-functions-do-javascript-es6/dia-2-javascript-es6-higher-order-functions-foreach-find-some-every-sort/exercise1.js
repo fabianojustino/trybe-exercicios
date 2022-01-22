@@ -114,7 +114,7 @@ const everyoneWasBornOnSecXX = (list, yearInicial, yearFinal) => {
   return list.every((element) => element.author.birthYear >= yearInicial && element.author.birthYear <= yearFinal);  
 } 
 const checkWhasBorn = everyoneWasBornOnSecXX(books, 1801, 2000);
- console.log(checkWhasBorn); 
+// console.log(checkWhasBorn); 
 
 
 // 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
@@ -136,13 +136,14 @@ const someBookWasReleaseOnThe80s= (list, decadaInicial, decadaFinal) => list.som
 
 const authorUnique = () => {
 
-return  books.every((book)=> !books.some((bookOnly)=>
-    (book.author.birthYear === bookOnly.author.birthYear)&&
+return  books.every((book)=> 
+!books.some((bookOnly)=>
+
+   (book.author.birthYear === bookOnly.author.birthYear)&&
     (book.author.name !== bookOnly.author.name)
   ))
 
 }
 
-
-
 console.log(authorUnique())
+
