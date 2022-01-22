@@ -62,11 +62,11 @@ const books = [
 ];
 
 const authorBornIn1947 = (array, year) =>
-  array.find((write) => write.author.birthYear === year);
+  array.find((write) => write.author.birthYear === year).author.name;
 
 // Adicione o código do exercício aqui:
 const writer = authorBornIn1947(books, 1947);
-/* console.log(writer) */
+//console.log(writer)
 
 // 2 - Retorne o nome do livro de menor nome.
 
@@ -110,9 +110,11 @@ books.sort((a, b) => {
 
 // 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
 
-const everyoneWasBornOnSecXX = (list, year) =>   list.every((element) => element.author.birthYear >= year);
-const checkWhasBorn = everyoneWasBornOnSecXX(books, 1901);
-/* console.log(checkWhasBorn); */
+const everyoneWasBornOnSecXX = (list, yearInicial, yearFinal) => {
+  return list.every((element) => element.author.birthYear >= yearInicial && element.author.birthYear <= yearFinal);  
+} 
+const checkWhasBorn = everyoneWasBornOnSecXX(books, 1801, 2000);
+ console.log(checkWhasBorn); 
 
 
 // 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
@@ -126,7 +128,21 @@ const someBookWasReleaseOnThe80s= (list, decadaInicial, decadaFinal) => list.som
    return decada >= decadaInicial && decada <= decadaFinal; 
   
 });
-console.log( someBookWasReleaseOnThe80s(books, 80, 89))
+/* console.log( someBookWasReleaseOnThe80s(books, 80, 89)) */
 
 
 
+// 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+
+const authorUnique = () => {
+
+return  books.every((book)=> !books.some((bookOnly)=>
+    (book.author.birthYear === bookOnly.author.birthYear)&&
+    (book.author.name !== bookOnly.author.name)
+  ))
+
+}
+
+
+
+console.log(authorUnique())
