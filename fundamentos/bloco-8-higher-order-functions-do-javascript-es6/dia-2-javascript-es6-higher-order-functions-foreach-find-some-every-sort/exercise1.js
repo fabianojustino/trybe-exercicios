@@ -61,14 +61,13 @@ const books = [
   },
 ];
 
-const authorBornIn1947 = (array, year) =>
-  array.find((write) => write.author.birthYear === year);
+const authorBornIn1947 = (array, year) =>  array.find((write) => write.author.birthYear === year);
 
 // Adicione o código do exercício aqui:
 const writer = authorBornIn1947(books, 1947);
 /* console.log(writer) */
 
-// --------------------FOR EACH
+// 2 - Retorne o nome do livro de menor nome.
 
 function smallerName() {
   let small = books[0].name.length;
@@ -84,4 +83,12 @@ function smallerName() {
   return nameBook;
 }
 
-console.log(smallerName());
+//console.log(smallerName());
+
+
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
+
+const getNamedBook = (array, qtdeCaracter) =>  array.find((element) =>  element.name.length === qtdeCaracter );
+
+const booksWhith26Elements = getNamedBook(books, 26)
+
