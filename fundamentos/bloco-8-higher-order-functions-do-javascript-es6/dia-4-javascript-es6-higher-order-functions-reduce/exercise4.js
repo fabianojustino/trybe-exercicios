@@ -62,6 +62,4 @@ const books = [
 ];
 
 
-const averageAge= (acc, current) => Math.round(acc + (current.releaseYear - current.author.birthYear) / books.length);
-
-console.log(books.reduce(averageAge, 0));
+console.log(books.reduce((acc, current)=> acc.name.length > current.name.length ? acc : current  ))
