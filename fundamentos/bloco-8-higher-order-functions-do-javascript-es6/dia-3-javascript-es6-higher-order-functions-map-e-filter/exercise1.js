@@ -77,3 +77,8 @@ return  listBook.map((book)=> (
 }
 
 //console.log(nameAndAge(books));
+
+
+/* const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre !=='Terror') */
+const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre ==='Ficção Científica' || book.genre === 'Fantasia')
+console.log(fantasyOrScienceFiction(books));
