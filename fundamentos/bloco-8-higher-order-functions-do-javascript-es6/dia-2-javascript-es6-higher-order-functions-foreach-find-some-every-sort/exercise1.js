@@ -61,7 +61,8 @@ const books = [
   },
 ];
 
-const authorBornIn1947 = (array, year) =>  array.find((write) => write.author.birthYear === year);
+const authorBornIn1947 = (array, year) =>
+  array.find((write) => write.author.birthYear === year);
 
 // Adicione o código do exercício aqui:
 const writer = authorBornIn1947(books, 1947);
@@ -85,23 +86,30 @@ function smallerName() {
 
 //console.log(smallerName());
 
-
 // 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
 
-const getNamedBook = (array, qtdeCaracter) =>  array.find((element) =>  element.name.length === qtdeCaracter );
-const booksWhith26Elements = getNamedBook(books, 26)
+const getNamedBook = (array, qtdeCaracter) =>
+  array.find((element) => element.name.length === qtdeCaracter);
+const booksWhith26Elements = getNamedBook(books, 26);
 
 //console.log(booksWhith26Elements);
 
-books.sort((a,b)=> {
-  
-  if(a.id < b.id){
-    return -1
-  }else if( a.id > b.id){
+// 4 - Ordene os livros por data de lançamento em ordem decrescente.
+
+books.sort((a, b) => {
+  if (a.releaseYear > b.releaseYear) {
+    return -1;
+  } else if (a.releaseYear < b.releaseYear) {
     return 1;
-  }else{
+  } else {
     return 0;
   }
 });
 
-// console.log(books);
+/* console.log(books); */
+
+// 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
+
+const everyoneWasBornOnSecXX = (lista, year) =>   lista.every((element) => element.author.birthYear >= year);
+const checkWhasBorn = everyoneWasBornOnSecXX(books, 1901);
+console.log(checkWhasBorn);
