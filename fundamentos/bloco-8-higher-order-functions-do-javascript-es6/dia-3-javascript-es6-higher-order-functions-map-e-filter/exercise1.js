@@ -62,11 +62,11 @@ const books = [
 ];
 
 
+// 1
 const formatedBookNames = ( )=>  books.map((book)=>  `${book.name} - ${book.genre} - ${book.author.name}` )
-
 //console.log(formatedBookNames(books));
 
-
+// 2
 const nameAndAge= (listBook)=> {
 return  listBook.map((book)=> (
   {
@@ -78,30 +78,38 @@ return  listBook.map((book)=> (
 
 //console.log(nameAndAge(books));
 
-
+// 3
 /* const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre !=='Terror') */
 const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre ==='Ficção Científica' || book.genre === 'Fantasia')
 //console.log(fantasyOrScienceFiction(books));
 
-
+// 4
 const oldBooksOrdered= (listBook, yearActual)=> {
 return  listBook.filter((book)=> ((yearActual - book.releaseYear)>60)).sort((a , b) => a.releaseYear - b.releaseYear)
 }
 
 //console.log(oldBooksOrdered(books, new Date().getFullYear()));
 
+
+// 5
 const fantasyOrScienceFictionAuthors= (listBook)=> {
  return listBook
 .filter((book)=> (book.genre==='Ficção Científica' || book.genre === 'Fantasia'))
 .map((book) => book.author.name)
 .sort();
-
 }
-
 //console.log(fantasyOrScienceFictionAuthors(books));
 
-
+// 6
 const oldBooks= (listBook, currentYear)=> listBook
 .filter((book)=> (currentYear - book.releaseYear > 60))
 .map((book)=> book.name)
 /* console.log(oldBooks(books, new Date().getFullYear())); */
+
+
+const authorWith3DotsOnName= (listbook) => listbook
+.filter((book)=> (book.author.name).split('.').length === 4)[0].name
+
+
+console.log(authorWith3DotsOnName(books));
+
