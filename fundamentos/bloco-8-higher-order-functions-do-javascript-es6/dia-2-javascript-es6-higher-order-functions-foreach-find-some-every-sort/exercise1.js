@@ -110,6 +110,23 @@ books.sort((a, b) => {
 
 // 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
 
-const everyoneWasBornOnSecXX = (lista, year) =>   lista.every((element) => element.author.birthYear >= year);
+const everyoneWasBornOnSecXX = (list, year) =>   list.every((element) => element.author.birthYear >= year);
 const checkWhasBorn = everyoneWasBornOnSecXX(books, 1901);
-console.log(checkWhasBorn);
+/* console.log(checkWhasBorn); */
+
+
+// 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
+
+
+const someBookWasReleaseOnThe80s= (list, decadaInicial, decadaFinal) => list.some((element) =>{
+   let year = element.releaseYear;
+   year = year.toString();
+   const decada = parseInt(year.substring(year.length-2));
+
+   return decada >= decadaInicial && decada <= decadaFinal; 
+  
+});
+console.log( someBookWasReleaseOnThe80s(books, 80, 89))
+
+
+
