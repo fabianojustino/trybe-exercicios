@@ -17,8 +17,6 @@ const newEmployees = (callback) => {
   }
   return employees;
 };
-
-
 console.log(newEmployees(createEmployee));
 
 
