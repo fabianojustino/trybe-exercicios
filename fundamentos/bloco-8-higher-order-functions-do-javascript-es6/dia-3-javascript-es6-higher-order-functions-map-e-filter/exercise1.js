@@ -81,4 +81,12 @@ return  listBook.map((book)=> (
 
 /* const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre !=='Terror') */
 const fantasyOrScienceFiction = (listBook)=> listBook.filter((book)=> book.genre ==='Ficção Científica' || book.genre === 'Fantasia')
-console.log(fantasyOrScienceFiction(books));
+//console.log(fantasyOrScienceFiction(books));
+
+
+const oldBooksOrdered= (listBook, yearActual)=> {
+return  listBook.filter((book)=> ((yearActual - book.releaseYear)>60)).sort((a , b) => a.releaseYear - b.releaseYear)
+}
+
+console.log(oldBooksOrdered(books, new Date().getFullYear()));
+
