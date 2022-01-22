@@ -71,7 +71,7 @@ const nameAndAge= (listBook)=> {
 return  listBook.map((book)=> (
   {
   author: book.author.name ,
-  age: (book.releaseYear- book.author.birthYear)
+  age: (book.releaseYear - book.author.birthYear)
   }
 )).sort((a,b)=> a.age - b.age)
 }
@@ -88,5 +88,14 @@ const oldBooksOrdered= (listBook, yearActual)=> {
 return  listBook.filter((book)=> ((yearActual - book.releaseYear)>60)).sort((a , b) => a.releaseYear - b.releaseYear)
 }
 
-console.log(oldBooksOrdered(books, new Date().getFullYear()));
+//console.log(oldBooksOrdered(books, new Date().getFullYear()));
 
+const fantasyOrScienceFictionAuthors= (listBook)=> {
+ return listBook
+.filter((book)=> (book.genre==='Ficção Científica' || book.genre === 'Fantasia'))
+.map((book) => book.author.name)
+.sort();
+
+}
+
+console.log(fantasyOrScienceFictionAuthors(books));
