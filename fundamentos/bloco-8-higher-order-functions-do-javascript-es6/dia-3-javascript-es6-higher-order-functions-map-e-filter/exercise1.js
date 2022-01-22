@@ -64,4 +64,16 @@ const books = [
 
 const formatedBookNames = ( )=>  books.map((book)=>  `${book.name} - ${book.genre} - ${book.author.name}` )
 
-console.log(formatedBookNames(books));
+//console.log(formatedBookNames(books));
+
+
+const nameAndAge= (listBook)=> {
+return  listBook.map((book)=> (
+  {
+  author: book.author.name ,
+  age: (book.releaseYear- book.author.birthYear)
+  }
+)).sort((a,b)=> a.age - b.age)
+}
+
+//console.log(nameAndAge(books));
