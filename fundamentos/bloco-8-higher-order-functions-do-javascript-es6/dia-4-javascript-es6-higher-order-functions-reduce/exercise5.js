@@ -6,7 +6,7 @@ const names = [
 
 const containsA= (acc, current)=> {
    let letter = current.toLowerCase();
-   let ocorrencias = (letter.match(/a/g)).length; 
+   let ocorrencias = (letter.match(/i/g) || []).length; // ou retorna um array com todas as ocorrencias ou um array vazio
    return acc + ocorrencias;
   
 }
