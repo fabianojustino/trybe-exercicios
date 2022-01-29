@@ -104,7 +104,7 @@ const fantasyOrScienceFictionAuthors= (listBook)=> {
 const oldBooks= (listBook, currentYear)=> listBook
 .filter((book)=> (currentYear - book.releaseYear > 60))
 .map((book)=> book.name)
-/* console.log(oldBooks(books, new Date().getFullYear())); */
+ console.log(oldBooks(books, new Date().getFullYear())); 
 
 
 const authorWith3DotsOnName= (listbook) => listbook
