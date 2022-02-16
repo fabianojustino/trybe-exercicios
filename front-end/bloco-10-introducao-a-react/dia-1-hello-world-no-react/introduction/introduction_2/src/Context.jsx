@@ -31,7 +31,7 @@ class Context extends React.Component {
         <div className="content">
           {conteudos.map((element) => (
                <div key={element.conteudo} className='card'>
-                   <h4>{`O conteúdo é: ${element.conteudo}`}</h4>
+                   <h4>{`O conteúdo é:  ${element.conteudo}`}</h4>
                    <p>{`status: ${element.status}`}</p>
                    <p>{`bloco: ${element.bloco}`}</p>
                </div>
